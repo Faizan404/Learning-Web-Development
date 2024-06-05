@@ -64,17 +64,17 @@ console.log(`The circumference of the circle is ${circumference}`);
 //? 5 * 8 = 40
 //? 5 * 9 = 45
 //? 5 * 10 = 50
-let numTable = 5;
-console.log(`${numTable} *    1   =  ${5 * 1}`);
-console.log(`${numTable} *    2   =  ${5 * 2}`);
-console.log(`${numTable} *    3   =  ${5 * 3}`);
-console.log(`${numTable} *    4   =  ${5 * 4}`);
-console.log(`${numTable} *    5   =  ${5 * 5}`);
-console.log(`${numTable} *    6   =  ${5 * 6}`);
-console.log(`${numTable} *    7   =  ${5 * 7}`);
-console.log(`${numTable} *    8   =  ${5 * 8}`);
-console.log(`${numTable} *    9   =  ${5 * 9}`);
-console.log(`${numTable} *    10   =  ${5 * 10}`);
+let numTable = 14;
+console.log(`${numTable} *    1   =  ${numTable * 1}`);
+console.log(`${numTable} *    2   =  ${numTable * 2}`);
+console.log(`${numTable} *    3   =  ${numTable * 3}`);
+console.log(`${numTable} *    4   =  ${numTable * 4}`);
+console.log(`${numTable} *    5   =  ${numTable * 5}`);
+console.log(`${numTable} *    6   =  ${numTable * 6}`);
+console.log(`${numTable} *    7   =  ${numTable * 7}`);
+console.log(`${numTable} *    8   =  ${numTable * 8}`);
+console.log(`${numTable} *    9   =  ${numTable * 9}`);
+console.log(`${numTable} *    10   =  ${numTable * 10}`);
 
 //? 10.Jim is going to replant his lawn. He would like to know how much the sod will cost, given cost of the sod per square feet and the length and width of two different lawn areas in feet. Write a solution to calculate this cost.
 let sodPrice = 0.5;
