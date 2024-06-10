@@ -44,3 +44,32 @@ console.log(calcSum());
 (function calcMod() {
     console.log(34 % 2);
 })();
+
+
+
+function findNumInOrder(n1, n2, n3) {
+    let num1 = n1;
+    let num2 = n2;
+    let num3 = n3;
+
+    let largestNo = num1;
+    let secondLargest = num2;
+    let smallestNo = num3;
+    
+   /**
+    * n1 = 12
+    * n2 = 24
+    * n3 = 3
+    * 
+    * lrg = n1
+    * secLrg = n2 
+    * sm = n3
+    * 
+    * if n1 > n2 AND n1 > n3 then
+    *    
+    */
+}
+
+
+
+
