@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #02aab0, #00cdac);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-container {
+  background-color: aliceblue;
+  padding: 3rem;
+  width: 40vw;
+  height: 70vh;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.title {
+  margin: 0 0 2rem 0;
+}
+
+.todo-input {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.todo-input :first-child {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.todo-input :last-child {
+  background-color: #02aab0;
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 1rem;
+  width: 5vw;
+}
+.task-container {
+  margin-top: 2rem;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  background-color: #00cdab34;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.task-group :first-child {
+  margin-right: 1rem;
+}
+.task-group {
+  display: flex;
+  align-items: center;
+}
+.btn-group button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.btn-group :first-child {
+  background-color: cornflowerblue;
+}
+.btn-group :last-child {
+  background-color: crimson;
+}
