@@ -44,7 +44,7 @@ const showWeartherBox = function (weatherData) {
   const weatherCondition = weatherData.weather[0].main;
   const weatherDescr = weatherData.weather[0].description;
 
-  if (weatherCondition === "Haze") {
+  if (weatherCondition === "Haze" || weatherCondition === "Smoke") {
     weatherBoxImage.src = "./images/mist.png";
   } else if (weatherCondition === "Rain") {
     weatherBoxImage.src = "./images/rain.png";
@@ -66,14 +66,13 @@ const showWeartherBox = function (weatherData) {
 };
 
 const disableErrorBox = function () {
-  // container.style.height = "400px";
   errorModal.style.display = "none";
   errorModal.classList.remove("fadeIn");
 };
 
 function kelvinToCelsius(kelvin) {
   const celsius = kelvin - 273.15;
-  return celsius.toFixed(2); // Convert to fixed decimal places for readability
+  return celsius.toFixed(2);
 }
 
 (function init() {
