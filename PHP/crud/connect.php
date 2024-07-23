@@ -9,8 +9,5 @@ $con = new mysqli($server,$name,$password,$db_name);
 
 if(!$con){
     die(mysqli_error($con));
-}else{
-    echo "connection succfully";
 }
-
 ?>

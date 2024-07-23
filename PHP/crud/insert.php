@@ -15,9 +15,4 @@ $sql = "INSERT INTO `crudtable`(`name`, `email`, `mobile`, `password`) VALUES ('
 $result = $con->query($sql);
 echo $result;
 
-
-
-
-
-
 }

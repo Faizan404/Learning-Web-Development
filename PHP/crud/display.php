@@ -1,6 +1,9 @@
 <?php
 include "connect.php";
+
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -11,9 +14,7 @@ include "connect.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-
-
-
+    
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -51,37 +52,80 @@ include "connect.php";
   </div>
 </nav>
 
-<button class="btn btn-warning"><a href="display.php">USER</a></button>
+<button class="btn btn-warning"><a href="index.php">Add User</a></button>
 
-<div class="container mt-5">
-<form action="insert.php" method="POST">
-<div class="mb-3">
-    <label  class="form-label">Name</label>
-    <input type="text" name="name" placeholder="Enter your name" class="form-control" required>    
-  </div>
 
-  <div class="mb-3">
-    <label  class="form-label">Email address</label>
-    <input type="email" name="email" value="@gmail.com" class="form-control" required>    
-  </div>
+<div class="container">
 
-  <div class="mb-3">
-    <label  class="form-label">Mobile</label>
-    <input type="number" name="mobile" placeholder="Enter your number" class="form-control" required >    
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Password</label>
-    <input type="password" placeholder="Enter your password" name="password" class="form-control" required>
-  </div>
 
- <input type="submit" class="btn btn-primary" name="submit" >
-</form>
+<?php
+
+$sql = "SELECT * FROM `crudtable` ";
+
+$result = mysqli_query($con,$sql);
+
+?>
+
+
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">password</th>
+      <th scope="col">Action</th>     
+    </tr>
+  </thead>
+  <tbody>
+   <?php
+
+if($result){
+    // $row=mysqli_fetch_assoc($result);          
+$num = 0;
+    while($row=mysqli_fetch_assoc($result)){
+        
+
+$id = $row['id'];
+$name = $row['name'];
+$email = $row['email'];
+$mobile = $row['mobile'];
+$password = $row['password'];
+
+
+echo '
+
+ <tr>
+      <th scope="row">'.++$num.'</th>
+      <td>'.$name.'</td>
+      <td>'.$email.'</td>
+      <td>'.$mobile.'</td>
+      <td>'.$password.'</td>
+
+
+     <td>
+     <button> <a class="btn btn-danger" href="delete.php?deleteid='.$id .'">DELETE</a></button>
+      <button> <a class="btn btn-primary" href="update.php?updateid='.$id .'">UPDATE</a></button>
+     </td>
+       </tr>
+
+';
+
+    }
+   
+}else{
+    echo "data does't exist";
+}  
+    
+    ?>
+      
+
+  </tbody>
+</table>
 </div>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
   </body>
 </html>

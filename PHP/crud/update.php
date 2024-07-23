@@ -1,5 +1,39 @@
 <?php
 include "connect.php";
+
+$id = $_GET['updateid'];
+
+$sql = "SELECT * FROM `crudtable` where id = $id ";
+
+$result = mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+
+$name = $row['name'];
+$email = $row['email'];
+$mobile = $row['mobile'];
+$password = $row['password'];
+
+
+if(isset($_POST['submit'])){
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $password = $_POST['password']; 
+
+    $sql = "UPDATE `crudtable` SET `name`='$name',`email`='$email',`mobile`='$mobile',`password`='$password' WHERE id = $id";
+
+    $result = $con->query($sql);
+    echo $result;
+    if($result){
+        header('location:display.php');
+    }else{
+        die(mysqli_error($con));
+    }
+
+}
+
+
 ?>
 
 <!doctype html>
@@ -54,27 +88,28 @@ include "connect.php";
 <button class="btn btn-warning"><a href="display.php">USER</a></button>
 
 <div class="container mt-5">
-<form action="insert.php" method="POST">
+<form method="POST">
 <div class="mb-3">
     <label  class="form-label">Name</label>
-    <input type="text" name="name" placeholder="Enter your name" class="form-control" required>    
+    <input type="text" name="name" placeholder="Enter your name" class="form-control" value="<?php echo  $name ?>" required>    
   </div>
 
   <div class="mb-3">
     <label  class="form-label">Email address</label>
-    <input type="email" name="email" value="@gmail.com" class="form-control" required>    
+    <input type="email" name="email" value="<?php echo  $email ?>"class="form-control" required>    
   </div>
 
   <div class="mb-3">
     <label  class="form-label">Mobile</label>
-    <input type="number" name="mobile" placeholder="Enter your number" class="form-control" required >    
+    <input type="number" name="mobile" placeholder="Enter your number" class="form-control" required value="<?php echo  $mobile ?>" >    
   </div>
   <div class="mb-3">
     <label  class="form-label">Password</label>
-    <input type="password" placeholder="Enter your password" name="password" class="form-control" required>
+    <input type="password" placeholder="Enter your password" name="password" class="form-control" value="<?php echo  $password ?>" required>
   </div>
 
- <input type="submit" class="btn btn-primary" name="submit" >
+  <button class="btn btn-primary" name="submit" type="submit" >Update</button>
+ 
 </form>
 </div>
 
@@ -85,3 +120,4 @@ include "connect.php";
     
   </body>
 </html>
+
