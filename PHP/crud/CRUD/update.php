@@ -15,7 +15,6 @@ $password = $row['password'];
 
 
 if(isset($_POST['submit'])){
-
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
