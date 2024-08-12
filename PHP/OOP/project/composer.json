@@ -1,0 +1,16 @@
+{
+    "name": "azadchaiwala/project",
+    "description": "php oops",
+    "autoload": {
+        "psr-4": {
+            "Azadchaiwala\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Faizan Mustafa",
+            "email": "77750924+Faizan404@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

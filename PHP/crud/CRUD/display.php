@@ -3,8 +3,6 @@ include "connect.php";
 
 ?>
 
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -83,7 +81,9 @@ $result = mysqli_query($con,$sql);
    <?php
 
 if($result){
-    // $row=mysqli_fetch_assoc($result);          
+    // $row=mysqli_fetch_assoc($result); 
+    // echo  $row['name'];    
+      
 $num = 0;
     while($row=mysqli_fetch_assoc($result)){
         
