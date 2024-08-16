@@ -65,6 +65,7 @@ console.log(`The circumference of the circle is ${circumference}`);
 //? 5 * 9 = 45
 //? 5 * 10 = 50
 let numTable = 14;
+// console.log(numTable, " *    1   = " , numTable * 1);
 console.log(`${numTable} *    1   =  ${numTable * 1}`);
 console.log(`${numTable} *    2   =  ${numTable * 2}`);
 console.log(`${numTable} *    3   =  ${numTable * 3}`);
